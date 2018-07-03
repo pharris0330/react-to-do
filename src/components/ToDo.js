@@ -7,7 +7,11 @@ import React, { Component } from 'react';
        <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete }  />
 
       <span>{this.props.description}</span>
-    </li>
+
+
+
+      <button onClick={this.props.deleteToDoHandler}></button>
+      </li>
   );
 }
 }

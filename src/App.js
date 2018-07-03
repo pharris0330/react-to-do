@@ -24,12 +24,11 @@ class App extends Component {
   // }
 
 deleteToDoHandler() {
-  
-    this.setState({ 
-       todos: [
-         { description: 'Walk the cat', isCompleted: true },
-         { description: 'Throw the dishes away', isCompleted: false }
-       ]});
+this.setState({
+      todos: [
+        { description: 'Walk the cat', isCompleted: true },
+        { description: 'Throw the dishes away', isCompleted: false }
+      ]})
   }
 
 
@@ -58,7 +57,7 @@ deleteToDoHandler() {
       <div className="App">
         <ul>
           { this.state.todos.map( (todo, index) =>
-             <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) }  />
+             <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } deleteToDoHandler={ () => this.deleteToDoHandler() } />
           )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
@@ -66,6 +65,7 @@ deleteToDoHandler() {
             <input type="submit" />
           </form>
           <button onClick={this.deleteToDoHandler.bind(this)}>Delete</button>
+
       </div>
     );
   }
