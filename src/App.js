@@ -23,7 +23,7 @@ class App extends Component {
   //   return value !== this.state.todos[0];
   // }
 
-deleteToDoHandler(index) {
+deleteToDoHandler() {
   
     this.setState({ 
        todos: [
